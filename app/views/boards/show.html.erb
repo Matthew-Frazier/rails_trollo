@@ -1,0 +1,16 @@
+<h1><%= @board.name %>'s List</h1>
+<br>
+<%= link_to "Create A List", new_board_list_path(@board), class:"btn" %>
+<hr>
+<% @board.lists.each do |list| %>
+  <hr>
+  <%= list.name %>
+  <br>
+  <%= link_to "View List", board_list_path(@board, list), class:"btn" %>
+  <br>
+  <%= link_to "Edit List", edit_board_list_path(@board, list), class:"btn" %>
+  <br>
+  <%= link_to "Delete List", board_list_path(@board, list), method: :delete, class:"btn" %>
+  <hr>
+<% end %>
+

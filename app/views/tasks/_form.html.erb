@@ -1,0 +1,7 @@
+<%= form_with(model: [@list, @task], local: true) do |f| %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, autofocus: true, required: true %>
+  </div>
+  <%= f.submit nil, class:"btn" %>
+<% end %>
